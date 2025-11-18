@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="en">
+<nav th:fragment="navbar">
+    <div class="app-name">
+        <a href="/">TrueVoice</a>
+    </div>
+
+    <!-- Hamburger Icon -->
+    <div class="hamburger" id="hamburger">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+    </div>
+
+    <!-- Navigation Menu -->
+    <div class="menu" id="navMenu">
+        <a href="/home">Home</a>
+        <a href="/dashboard" sec:authorize="hasRole('USER')">Dashboard</a>
+        <a href="/feedback" sec:authorize="hasRole('USER')">Post</a>
+        <a href="/login" sec:authorize="!isAuthenticated()">Login</a>
+        <a href="/logout" sec:authorize="isAuthenticated()">Logout</a>
+    </div>
+</nav>
+
+<!-- Blur Overlay -->
+<div class="menu-overlay" id="menuOverlay"></div>
+
+</html>

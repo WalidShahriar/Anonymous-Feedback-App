@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/global.css}">
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+    <link rel="stylesheet" th:href="@{/css/post-page.css}">
+    <title>Post</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <div th:replace="fragments/navbar.html :: navbar"></div>
+
+    <!-- Main Container -->
+    <div class="main-container container">
+        <h1>Share A Feedback</h1>
+
+        <form th:object="${feedback}" th:action="@{${mode} == 'edit' ? '/feedback/' + ${feedback.feedbackId} + '/edit' : '/feedback'}"
+              method="post" id="feedback-form">
+            <label for="feedbackFor">Feedback For</label>
+            <input type="text" th:field="*{feedbackFor}" id="feedbackFor" required>
+
+            <label for="title">Feedback Title</label>
+            <input type="text" th:field="*{title}" id="title" required>
+
+            <label>Is this feedback positive?</label>
+            <div id="radio-btn">
+                <label><input type="radio" th:field="*{isPositive}" th:value="true" required />&nbsp;Positive</label>
+                <label><input type="radio" th:field="*{isPositive}" th:value="false" required />&nbsp;Negative</label>
+            </div>
+
+            <label for="message">Feedback / Message</label>
+            <textarea th:field="*{message}" id="message" rows="8" required></textarea>
+
+            <input type="hidden" th:if="${mode} == 'edit'" th:field="*{feedbackId}" />
+            <button type="submit" th:text="${mode} == 'edit' ? 'Update' : 'Submit'"></button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <div th:replace="fragments/footer.html :: footer"></div>
+    <script th:src="@{/js/navbar.js}"></script>
+</body>
+</html>

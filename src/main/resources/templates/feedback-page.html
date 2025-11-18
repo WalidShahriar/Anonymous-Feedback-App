@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/global.css}">
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+    <link rel="stylesheet" th:href="@{/css/feedback-page.css}">
+    <title>Feedback</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <div th:replace="fragments/navbar.html :: navbar"></div>
+
+    <!-- Main Container -->
+    <div class="container main-container">
+
+        <!-- Notice Section -->
+        <p class="notice">Anonymous feedback - responses are unverified and meant only for constructive sharing.</p>
+
+        <!-- Posts Section -->
+        <div class="post">
+            <div class="top-section">
+                <p th:text="${feedback.feedbackFor}" class="name"></p>
+                <p th:text="${#temporals.format(feedback.createdAt, 'dd MMM yyyy')}" class="date"></p>
+                <p th:if="${feedback.isPositive}" class="positive">Positive</p>
+                <p th:if="${!feedback.isPositive}" class="negative">Negative</p>
+            </div>
+            <div class="mid-section">
+                <p th:text="${feedback.title}" class="title"></p>
+                <p th:text="${feedback.message}" class="desc"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div th:replace="fragments/footer.html :: footer"></div>
+    <script th:src="@{/js/navbar.js}"></script>
+</body>
+</html>

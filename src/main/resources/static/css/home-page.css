@@ -1,0 +1,127 @@
+.main-container {
+    min-height: calc(100vh - 140px);
+}
+
+#search-form {
+    max-width: 800px;
+    display: flex;
+    gap: 10px;
+    margin: 40px auto;
+}
+
+#search-form input {
+    flex-grow: 1;
+    padding: 5px 10px;
+}
+
+#search-form button {
+    min-width: 50px;
+    background-color: #fc5c7d;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 2px;
+}
+
+#search-form button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.posts {
+    padding: 20px;
+    margin-bottom: 30px;
+    background-color: #f5f5f5;
+    border-radius: 2px;
+}
+
+.posts .top-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 5px solid white;
+}
+
+.posts .top-section .name {
+    flex-grow: 1;
+    font-size: 18px;
+}
+
+.posts .top-section .date {
+    font-size: 14px;
+}
+
+.posts .top-section .positive {
+    width: 100px;
+    text-align: center;
+    background-color: #62b076;
+    color: white;
+    padding: 2px;
+    border-radius: 20px;
+}
+
+.posts .top-section .delete {
+    padding: 2px 5px;
+    color: #fc5c7d;
+    border: 1px solid #fc5c7d;
+    border-radius: 2px;
+}
+
+.posts .top-section .delete:hover {
+    cursor: pointer;
+    background: #fc5c7d;
+    color: white;
+}
+
+.posts .top-section .negative {
+    width: 100px;
+    text-align: center;
+    background-color: #fc5c7d;
+    color: white;
+    padding: 2px;
+    border-radius: 20px;
+}
+
+.posts .mid-section .title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.posts .mid-section .desc {
+    line-height: 1.5rem;
+    letter-spacing: 0.05rem;
+    margin-bottom: 20px;
+}
+
+.posts .bottom-section a {
+    text-decoration: none;
+    color: #fc5c7d;
+    font-weight: 600;
+}
+
+.posts .bottom-section a:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+#pagination {
+    width: fit-content;
+    margin: 20px auto 40px auto;
+}
+
+#pagination a {
+    text-decoration: none;
+    color: #fc5c7d;
+}
+
+#pagination a:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+#pagination span {
+    margin: 0 5px;
+}
