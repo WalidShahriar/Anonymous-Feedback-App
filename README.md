@@ -1,0 +1,3 @@
+<img width="1344" height="768" alt="Gemini_Generated_Image_ost9f7ost9f7ost9" src="https://github.com/user-attachments/assets/80fff451-7a27-46b3-9ddd-5e012c8a16b6" />
+
+TrueVoice is a Spring Boot and Thymeleaf web application that lets students share structured feedback and reviews about their teachers in a clean, paginated interface with search by teacher name.​ Authenticated users with the USER role can post, edit, and manage their own feedback from a personal dashboard, while ADMIN users can moderate and delete inappropriate feedback from the public feed.​ The app includes role-based access control, secure authentication, and a responsive UI designed for a simple, mobile-friendly feedback experience.
